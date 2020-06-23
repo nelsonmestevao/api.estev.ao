@@ -1,0 +1,10 @@
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+"""Simple test"""
+import requests
+
+URL = "http://127.0.0.1:5000/u"
+
+hj = requests.post(URL, json={"url": "https://about.estevao.xyz"})
+
+print(hj.text)
