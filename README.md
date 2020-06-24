@@ -1,4 +1,4 @@
-# estev.ao
+# estev.ao API
 > :link: A short and simple redirecting service
 
 ## :rocket: Getting Started
