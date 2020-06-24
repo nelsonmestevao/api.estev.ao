@@ -28,4 +28,4 @@ def create_slug():
     db.session.add(link)
     db.session.commit()
 
-    return {"link": "https://estev.ao/u/" + link.slug}
+    return {"link": "https://estev.ao/u/" + link.slug, "slug": link.slug}
