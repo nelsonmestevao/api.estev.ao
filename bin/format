@@ -3,4 +3,3 @@
 source .venv/bin/activate
 
 yapf -i *.py
-

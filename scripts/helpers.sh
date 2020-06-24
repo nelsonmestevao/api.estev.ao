@@ -65,8 +65,15 @@ function echo_done() {
 
 function echo_info() {
   colorize cyan bold
-  echo "INFO:$(colorize reset)" "$@"
+  if (( $# < 2 )); then
+    echo "INFO:$(colorize reset)" "$@"
+  else
+    printf "[%s] $(colorize reset)" "$1"
+    shift 1
+    echo "$@"
+  fi
 }
+
 
 function not_installed() {
   [ ! -x "$(command -v "$@")" ]
