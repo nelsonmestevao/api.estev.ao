@@ -5,7 +5,7 @@ from app.models.link import Link
 
 short = Blueprint('short', __name__)
 
-@short.route('/u/<slug>', methods=['GET'])
+@short.route('/links/<slug>', methods=['GET'])
 def get_url(slug):
     """GET the url from a slug"""
     link = Link.query.filter_by(slug=slug).first_or_404()
@@ -16,7 +16,7 @@ def get_url(slug):
     return {"url": link.url}
 
 
-@short.route('/u', methods=['POST'])
+@short.route('/links', methods=['POST'])
 def create_slug():
     """POST a new slug for a url"""
     if not request.json or not 'url' in request.json:
@@ -27,4 +27,4 @@ def create_slug():
     db.session.add(link)
     db.session.commit()
 
-    return {"link": "https://estev.ao/" + link.slug}
+    return {"link": "https://estev.ao/u/" + link.slug}
