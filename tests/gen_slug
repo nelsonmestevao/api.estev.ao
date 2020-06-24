@@ -5,6 +5,6 @@ import requests
 
 URL = "http://127.0.0.1:5000/links"
 
-hj = requests.post(URL, json={"url": "https://about.estevao.xyz"})
+hj = requests.post(URL, json={"url": "about.estevao.xyz"})
 
 print(hj.text)

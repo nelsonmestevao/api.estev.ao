@@ -1,4 +1,5 @@
 from flask import Blueprint, request, abort
+import validators
 
 from app.extensions.database import db
 from app.models.link import Link
@@ -23,9 +24,30 @@ def create_slug():
     if not request.json or not 'url' in request.json:
         abort(400)
 
-    link = Link(url=request.json['url'])
+    url = format_urls_in_text(request.json['url'])
+
+    link = Link(url=url)
 
     db.session.add(link)
     db.session.commit()
 
     return {"link": "https://estev.ao/u/" + link.slug, "slug": link.slug}
+
+
+def format_urls_in_text(text):
+    accepted_protocols = ['http://', 'https://']
+    new_text = []
+
+    for word in str(text).split():
+        new_word = word
+        accepted = [protocol for protocol in accepted_protocols if protocol in new_word]
+
+        if not accepted:
+            new_word = 'http://{0}'.format(new_word)
+
+        if not validators.url(new_word):
+            new_word = word
+
+        new_text.append(new_word)
+
+    return ' '.join(new_text)
