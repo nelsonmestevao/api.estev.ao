@@ -24,5 +24,5 @@ echo_info "setup" "Installing dependencies..."
 pip install -r requirements.txt
 
 echo_info "db" "Creating database tables..."
-python3 -m app.migrate.py
 
+python3 -m app.migrate.py
