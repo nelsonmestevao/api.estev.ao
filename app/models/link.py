@@ -4,6 +4,7 @@ from random import choices
 
 from app.extensions.database import db
 
+
 class Link(db.Model):
     __tablename__ = 'links'
 

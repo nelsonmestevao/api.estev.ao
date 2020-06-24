@@ -2,4 +2,4 @@
 
 source .venv/bin/activate
 
-yapf -i *.py
+yapf -i **/**/*.py

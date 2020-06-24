@@ -5,6 +5,7 @@ from app.models.link import Link
 
 short = Blueprint('short', __name__)
 
+
 @short.route('/links/<slug>', methods=['GET'])
 def get_url(slug):
     """GET the url from a slug"""
