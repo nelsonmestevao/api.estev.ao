@@ -2,4 +2,5 @@
 
 source .venv/bin/activate
 
-flake8 *.py
+flake8 app/*.py
+pylint app/*.py
