@@ -40,7 +40,9 @@ def format_urls_in_text(text):
 
     for word in str(text).split():
         new_word = word
-        accepted = [protocol for protocol in accepted_protocols if protocol in new_word]
+        accepted = [
+            protocol for protocol in accepted_protocols if protocol in new_word
+        ]
 
         if not accepted:
             new_word = 'http://{0}'.format(new_word)
