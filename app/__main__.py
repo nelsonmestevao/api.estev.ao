@@ -1,9 +1,6 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 """A short and simple redirecting service"""
-from flask import Flask, request, abort
-from flask_sqlalchemy import SQLAlchemy
-
 from app import create_app
 
 __version__ = "0.1.0"

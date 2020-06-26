@@ -1,0 +1,17 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>API | estev.ao</title>
+</head>
+<body>
+    <form method="POST">
+        <input type="text" name="username" />
+        <input type="password" name="password" />
+        <input type="submit" value="login">
+    </form>
+    {% if error %}
+        <p style="color: red">{{ error }}</p>
+    {% endif %}
+</body>
+</html>
